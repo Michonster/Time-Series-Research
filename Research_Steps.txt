@@ -1,0 +1,18 @@
+TODO FOR RESEARCH:
+
+1. Get Dataset(s)
+
+1.5. Scaling, Normalization (Mid-Max scaler)
+
+2. Make ARIMA, LSTM, GRU, RNN
+
+2.5. Add Regularization
+
+2.5. https://github.com/Uzmamushtaque/Projects-in-Machine-Learning-and-AI/blob/main/lstm_p1.ipynb
+
+3. Evaluation Metrics
+
+4. Attention Based Models and Hybrid Models
+
+Uzma Mushtaque: Amos Eaton 111:
+Mondays/Thursdays: 10-11:30 AM
