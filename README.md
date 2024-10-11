@@ -98,7 +98,10 @@ To run this project locally, follow these steps:
 - Mean Absolute Percentage Error (MAPE)
 
 ### Results
-
+| Model | MSE  | MAE  | RMSE | MAPE  |
+|-------|------|------|------|-------|
+| RNN   | 9.88 | 2.00 | 3.14 | 4.51% |
+| LSTM  | 14.36 | 2.48 | 3.79 | 5.88% |
 
 ### Future WOrk
 - Further fine-tuning of LSTM and GRU models.
