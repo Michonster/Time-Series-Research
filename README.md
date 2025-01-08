@@ -1,11 +1,11 @@
 # NVIDIA Stock Price Prediction with Time Series Models
 
-This project focuses on predicting NVIDIA's stock prices using various time series forecasting models, including RNN and LSTM. We use historical stock data from 2010 to 2024 to train and evaluate these models, applying various fine-tuning techniques and metrics to assess performance. The project is part of an exploration into various models for stock price forecasting, with the goal of achieving highly accurate predictions using deep learning techniques.
+This project focuses on predicting NVIDIA's stock prices using various time series forecasting models, including RNN, LSTM, GRU, ARIMA, and SARIMA. We use historical stock data from 2010 to 2024 to train and evaluate these models, applying various fine-tuning techniques and metrics to assess performance. The project is part of an exploration into various models for stock price forecasting, with the goal of achieving highly accurate predictions using both deep learning and statistical techniques.
 
 ## Project Overview
 
 ### Goal
-The primary goal of this project is to create a robust and accurate time series forecasting model for predicting NVIDIA's stock prices using Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks. Future steps will involve experimenting with other advanced models like Gated Recurrent Units (GRUs) and hybrid models that combine the strengths of multiple architectures.
+The primary goal of this project is to create a robust and accurate time series forecasting model for predicting NVIDIA's stock prices using a combination of machine learning and statistical approaches. We have implemented Recurrent Neural Networks (RNNs), Long Short-Term Memory (LSTM) networks, and Gated Recurrent Units (GRUs). Additionally, we have explored ARIMA and SARIMA models for their effectiveness in capturing seasonality and trends.
 
 ### Accomplished So Far:
 1. **Data Acquisition**: 
@@ -30,7 +30,7 @@ The primary goal of this project is to create a robust and accurate time series 
 
 3. **LSTM Model**:
    - Built an LSTM model to capture long-term dependencies in stock price movements.
-   - **Current LSTM Parameters**:
+   - **Final LSTM Parameters**:
      - `n_steps = 30`
      - `units = 300`
      - `dropout_rate = 0.3`
@@ -41,30 +41,51 @@ The primary goal of this project is to create a robust and accurate time series 
      - MAE: 2.48
      - RMSE: 3.79
      - MAPE: 5.88%
-   - **Conclusion**: While the LSTM showed promise, its performance was slightly inferior to the RNN, requiring further fine-tuning.
+   - **Conclusion**: The LSTM showed promise but required further fine-tuning to match the RNN's performance.
+
+4. **GRU Model**:
+   - Implemented a Gated Recurrent Unit (GRU) model for time series prediction.
+   - **Performance**: 
+     - MSE: 13.74
+     - MAE: 2.22
+     - RMSE: 3.71
+     - MAPE: 4.57%
+   - **Conclusion**: The GRU model showed potential but fell short of outperforming the RNN.
+
+5. **ARIMA Model**:
+   - Built an ARIMA model to capture trends in stock prices.
+   - **Final ARIMA Parameters**:
+     - `(p, d, q) = (1, 1, 1)`
+     - Applied logarithmic transformation to stabilize variance.
+   - **Performance**:
+     - MSE: 0.5468
+     - MAE: 0.2320
+     - RMSE: 0.7395
+     - MAPE: 1.64%
+   - **Conclusion**: The ARIMA model performed exceptionally well after applying logarithmic transformation, achieving the lowest error metrics.
+
+6. **SARIMA Model**:
+   - Implemented a Seasonal ARIMA (SARIMA) model to incorporate seasonality.
+   - **Final SARIMA Parameters**:
+     - `(p, d, q) x (P, D, Q, s) = (1, 1, 1) x (1, 1, 1, 12)`
+   - **Performance**:
+     - MSE: 0.5526
+     - MAE: 0.2331
+     - RMSE: 0.7434
+     - MAPE: 1.68%
+   - **Conclusion**: The SARIMA model captured seasonal patterns well but did not significantly outperform ARIMA.
 
 ### What's Left To Do (Checklist)
 
-1. **Fine-Tuning LSTM**:
-   - [ ] Experiment with different `n_steps` values (e.g., 60, 90).
-   - [ ] Adjust dropout rate (e.g., reduce to 0.1 or 0.2).
-   - [ ] Test with more LSTM units (e.g., 350-400 units).
-   - [ ] Experiment with batch size to see its effect on learning stability.
+1. **Evaluation Across Datasets**:
+   - [ ] Test the RNN, LSTM, GRU, ARIMA, and SARIMA models on two additional datasets to ensure robustness and avoid sampling bias.
 
-2. **GRU Model**:
-   - [ ] Implement and test a Gated Recurrent Unit (GRU) model.
-   - [ ] Evaluate the GRU model’s performance compared to RNN and LSTM.
-   - [ ] Fine-tune hyperparameters for the GRU model.
-
-3. **Explore Advanced Models**:
+2. **Explore Advanced Models**:
    - [ ] Investigate using Attention-based models, which may improve prediction accuracy by focusing on important time steps.
    - [ ] Experiment with Hybrid models that combine multiple architectures for better predictions.
 
-4. **Evaluate Performance on Other Metrics**:
-   - [ ] Try using other error metrics such as Symmetric Mean Absolute Percentage Error (SMAPE) to evaluate models.
-   
-5. **Deploy the Best Model**:
-   - [ ] Once a model is finalized, work on deployment for real-time stock price prediction.
+3. **Deployment**:
+   - [ ] Deploy the best-performing model for real-time stock price prediction.
 
 ### Installation
 
