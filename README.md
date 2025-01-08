@@ -123,6 +123,9 @@ To run this project locally, follow these steps:
 |-------|------|------|------|-------|
 | RNN   | 9.88 | 2.00 | 3.14 | 4.51% |
 | LSTM  | 14.36 | 2.48 | 3.79 | 5.88% |
+| GRU	  | 13.74 |	2.22 | 3.71	| 4.57% |
+| ARIMA	| 0.5468	| 0.2320	| 0.7395 |1.64% |
+| SARIMA	| 0.5526	| 0.2331	| 0.7434	| 1.68% |
 
 ### Future WOrk
 - Further fine-tuning of LSTM and GRU models.
