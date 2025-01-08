@@ -107,8 +107,9 @@ To run this project locally, follow these steps:
 
 - Recurrent Neural Network (RNN)
 - Long Short-Term Memory (LSTM)
-- Gated Recurrent Units (GRU) (Upcoming)
-- Autoregressive Integrated Moving Average (ARIMA) (Planned)
+- Gated Recurrent Units (GRU)
+- Autoregressive Integrated Moving Average (ARIMA)
+- Seasonal ARIMA (SARIMA)
 - Attention-Based Models (Planned)
 - Hybrid Models (Planned)
 
