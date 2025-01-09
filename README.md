@@ -128,7 +128,7 @@ To run this project locally, follow these steps:
 | ARIMA	| 0.5468	| 0.2320	| 0.7395 |1.64% |
 | SARIMA	| 0.5526	| 0.2331	| 0.7434	| 1.68% |
 
-### Future WOrk
+### Future Work
 - Further fine-tuning of LSTM and GRU models.
 - Implement Attention and Hybrid models.
 - Explore real-time stock prediction using the best-performing model.
