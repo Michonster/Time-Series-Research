@@ -22,35 +22,49 @@ The primary goal of this project is to create a robust and accurate time series 
      - `learning_rate = 0.00001`
      - `epochs = 200`
    - **Performance**: 
-     - MSE: 9.88
-     - MAE: 2.00
-     - RMSE: 3.14
-     - MAPE: 4.51%
-   - **Conclusion**: The RNN performed well with an overall MAPE of 4.51%, and was fine-tuned to near-optimal performance.
+     - MSE: 9.14
+     - MAE: 1.93
+     - RMSE: 3.02
+     - MAPE: 4.24%
+   - **Conclusion**: The RNN performed well with an overall MAPE of 4.24%, and was fine-tuned to near-optimal performance.
 
 3. **LSTM Model**:
-   - Built an LSTM model to capture long-term dependencies in stock price movements.
+   - Built several LSTM configurations to capture long-term dependencies in stock price movements.
+   - **Best LSTM Configuration**:
+     - Bi-Directional LSTM with RMSprop
    - **Final LSTM Parameters**:
-     - `n_steps = 30`
+     - `n_steps = 150`
      - `units = 300`
      - `dropout_rate = 0.3`
      - `learning_rate = 0.0005`
      - `epochs = 200`
    - **Performance**: 
-     - MSE: 14.36
-     - MAE: 2.48
-     - RMSE: 3.79
-     - MAPE: 5.88%
-   - **Conclusion**: The LSTM showed promise but required further fine-tuning to match the RNN's performance.
+     - MSE: 9.55
+     - MAE: 2.17
+     - RMSE: 3.09
+     - MAPE: 5.19%
+   - **Other LSTM Configurations**:
+     - Adam + AMSGrad: MSE: 17.21, MAE: 2.81, RMSE: 4.15, MAPE: 6.30%
+     - Nadam: MSE: 18.48, MAE: 2.97, RMSE: 4.30, MAPE: 6.68%
+     - Adagrad: MSE: 233.72, MAE: 10.02, RMSE: 15.29, MAPE: 16.05%
+     - Adadelta: MSE: 2253.64, MAE: 36.64, RMSE: 47.47, MAPE: 72.53%
+     - SGD with Momentum: MSE: 120.63, MAE: 6.72, RMSE: 10.98, MAPE: 11.24%
+   - **Conclusion**: The Bi-Directional LSTM with RMSprop outperformed all other LSTM configurations, though it still fell slightly short of RNN performance.
 
 4. **GRU Model**:
    - Implemented a Gated Recurrent Unit (GRU) model for time series prediction.
+   - **Final GRU Parameters**:
+     - `n_steps = 150`
+     - `units = 300`
+     - `dropout_rate = 0.3`
+     - `learning_rate = 0.0003`
+     - `epochs = 200`
    - **Performance**: 
-     - MSE: 13.74
-     - MAE: 2.22
-     - RMSE: 3.71
-     - MAPE: 4.57%
-   - **Conclusion**: The GRU model showed potential but fell short of outperforming the RNN.
+     - MSE: 9.30
+     - MAE: 2.13
+     - RMSE: 3.05
+     - MAPE: 5.37%
+   - **Conclusion**: The GRU model delivered the best overall performance in terms of absolute error metrics (MSE, MAE, RMSE) and was highly efficient compared to other models.
 
 5. **ARIMA Model**:
    - Built an ARIMA model to capture trends in stock prices.
@@ -122,9 +136,9 @@ To run this project locally, follow these steps:
 ### Results
 | Model | MSE  | MAE  | RMSE | MAPE  |
 |-------|------|------|------|-------|
-| RNN   | 9.88 | 2.00 | 3.14 | 4.51% |
-| LSTM  | 14.36 | 2.48 | 3.79 | 5.88% |
-| GRU	  | 13.74 |	2.22 | 3.71	| 4.57% |
+| RNN   | 9.14 | 1.93 | 3.02 | 4.24% |
+| Bi-Directional LSTM  | 9.55 | 2.17 | 3.09 | 5.19% |
+| GRU	  | 9.30 |	2.13 | 3.05	| 5.37% |
 | ARIMA	| 0.5468	| 0.2320	| 0.7395 |1.64% |
 | SARIMA	| 0.5526	| 0.2331	| 0.7434	| 1.68% |
 
