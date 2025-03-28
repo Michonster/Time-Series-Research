@@ -16,3 +16,8 @@ TODO FOR RESEARCH:
 
 Uzma Mushtaque: Amos Eaton 111:
 Mondays/Thursdays: 10-11:30 AM
+
+1. Motivation (Why this is important?)
+2. Problem statement (Time Series forecasting with base models vs using hybrid models)
+3. What did I use to solve it? 
+4. Final Results/Conclusion
